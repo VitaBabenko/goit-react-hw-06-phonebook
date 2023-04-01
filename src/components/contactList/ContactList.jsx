@@ -1,18 +1,32 @@
+import { useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
-import { nanoid } from 'nanoid';
+import { getContacts } from '../../redux/contactsSlice';
+import { getFilter } from '../../redux/filterSlice';
 import { ContactListItem } from '../contactListItem/ContactListItem';
+import { List, ListItem } from './ContactList.styled';
 
-export const ContactList = ({ contacts, onDelete }) => {
+export const ContactList = () => {
+  const contacts = useSelector(getContacts);
+  const filter = useSelector(getFilter);
+
+  const visibleFilter = () => {
+    return contacts.filter(contact =>
+      contact.name.toLowerCase().includes(filter.toLowerCase())
+    );
+  };
+
+  const visibleContacts = visibleFilter();
+
   return (
-    <ul>
-      {contacts.map(contact => {
+    <List>
+      {visibleContacts.map(contact => {
         return (
-          <li key={nanoid()}>
-            <ContactListItem contact={contact} onDelete={onDelete} />
-          </li>
+          <ListItem key={contact.id}>
+            <ContactListItem contact={contact} />
+          </ListItem>
         );
       })}
-    </ul>
+    </List>
   );
 };
 
@@ -21,6 +35,5 @@ ContactList.propTypes = {
     PropTypes.shape({
       id: PropTypes.string.isRequired,
     })
-  ).isRequired,
-  onDelete: PropTypes.func.isRequired,
+  ),
 };

@@ -1,19 +1,27 @@
 import styled from 'styled-components';
 
-export const List = styled.div`
-    display: flex;
-    gap: 20px;
-    align-items: baseline;
+export const Name = styled.p`
+  font-size: 20px;
+  font-weight: 500;
+  color: #800080;
+`;
+
+export const Tel = styled.p`
+  font-size: 18px;
+  color: #800080;
 `;
 
 export const Btn = styled.button`
-    display: block;
-    cursor: pointer;
-    width: 90px;
-    height: 30px;
+  display: block;
+  align-content: center;
+  cursor: pointer;
+  padding: 3px 8px;
+  color: #800080;
+  border-color: #800080;
+  border-radius: 10px;
 
-    &:hover,
-    &:focus {
-        border: 2px solid black;
-    }
-`
+  &:hover,
+  &:focus {
+    border: 3px solid #800080;
+  }
+`;

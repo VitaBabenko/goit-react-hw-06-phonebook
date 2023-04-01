@@ -1,35 +1,57 @@
 import styled from 'styled-components';
-import { Form as FormikForm, ErrorMessage as FormikError } from 'formik';
+import {
+  Form as FormikForm,
+  ErrorMessage as FormikError,
+  Field as InputField,
+} from 'formik';
 
 export const Form = styled(FormikForm)`
-    border: 2px solid black;
-    padding: 15px;
+  border: 2px solid #800080;
+  border-radius: 10px;
+  padding: 15px;
+  width: 100%;
+
+  @media (min-width: 768px) {
     width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 `;
 
 export const FormField = styled.label`
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    width: 300px;
-    margin-bottom: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 250px;
+  color: #800080;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 25px;
+`;
+
+export const Field = styled(InputField)`
+  border-color: #800080;
+  border-radius: 10px;
 `;
 
 export const Btn = styled.button`
-    display: block;
-    width: 120px;
-    height: 35px;
-    cursor: pointer;
-    background-color: white;
-    border-radius: 3px;
+  display: block;
+  align-content: center;
+  padding: 10px 20px;
+  cursor: pointer;
+  color: #800080;
+  margin-left: auto;
+  margin-right: auto;
+  border-color: #800080;
+  border-radius: 10px;
 
-    &:hover,
-    &:focus {
-        border: 3px solid black;
-    }
+  &:hover,
+  &:focus {
+    border: 3px solid #800080;
+  }
 `;
 
 export const ErrorMessage = styled(FormikError)`
-    color: red;
-    width: 100%;
-`
+  color: red;
+  width: 100%;
+`;
