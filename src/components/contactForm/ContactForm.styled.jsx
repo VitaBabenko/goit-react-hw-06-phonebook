@@ -38,6 +38,8 @@ export const Btn = styled.button`
   display: block;
   align-content: center;
   padding: 10px 20px;
+  font-weight: 600;
+  font-size: 18px;
   cursor: pointer;
   color: #800080;
   margin-left: auto;
@@ -47,7 +49,7 @@ export const Btn = styled.button`
 
   &:hover,
   &:focus {
-    border: 3px solid #800080;
+    background-color: #ff00ff;
   }
 `;
 

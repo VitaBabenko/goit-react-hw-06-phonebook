@@ -14,6 +14,8 @@ export const Tel = styled.p`
 export const Btn = styled.button`
   display: block;
   align-content: center;
+  font-weight: 600;
+  font-size: 16px;
   cursor: pointer;
   padding: 3px 8px;
   color: #800080;
@@ -22,6 +24,6 @@ export const Btn = styled.button`
 
   &:hover,
   &:focus {
-    border: 3px solid #800080;
+    background-color: #ff00ff;
   }
 `;
